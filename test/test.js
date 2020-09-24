@@ -2,7 +2,7 @@ const A = artifacts.require('A')
 const B = artifacts.require('B')
 const C = artifacts.require('C')
 
-contract('delegatecall demo1', async accounts => {
+contract('DELEGATE_DEMO1', async accounts => {
     let a, b, c 
     let inst
 
