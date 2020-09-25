@@ -1,10 +1,8 @@
-const A = artifacts.require('A')
-const B = artifacts.require('B')
-const C = artifacts.require('C')
+const Management = artifacts.require('Management')
+const Operation = artifacts.require('Operation')
 
 module.exports = function (deployer) {
-    deployer.deploy(C)
-    .then(() => C.deployed())
-    .then(() => deployer.deploy(B, C.address))
-    .then(() => deployer.deploy(A, C.address))
+    deployer.deploy(Operation)
+    .then(() => Operation.deployed())
+    .then(() => deployer.deploy(Management, Operation.address))
 };

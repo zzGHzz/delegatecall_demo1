@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 < 0.8.0;
 
-contract C {
+contract Operation {
     uint val;
 
     function set(uint _val) external {

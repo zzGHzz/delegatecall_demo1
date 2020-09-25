@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 < 0.8.0;
 
-import "./B.sol";
+import "./Object.sol";
 
-contract A {
+contract Management {
     address delegate;
     address[] instances;
 
@@ -11,11 +11,11 @@ contract A {
         delegate = _delegate;
     }
 
-    function newB() external {
-        B b = new B(delegate);
-        instances.push(address(b));
+    function newObject() external {
+        Object obj = new Object(delegate);
+        instances.push(address(obj));
 
-        emit NewB(msg.sender, instances.length-1, address(b));
+        emit NewObject(msg.sender, instances.length-1, address(obj));
     }
 
     function set(uint i, uint val) external {
@@ -32,5 +32,5 @@ contract A {
         return abi.decode(result, (uint));
     }
 
-    event NewB(address from, uint index, address inst);
+    event NewObject(address from, uint index, address inst);
 }
